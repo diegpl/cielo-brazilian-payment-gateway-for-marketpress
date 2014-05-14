@@ -1,0 +1,4 @@
+<dados-ec>
+    <numero><?php echo $this->numero; ?></numero>
+    <chave><?php echo $this->chave; ?></chave>
+</dados-ec>

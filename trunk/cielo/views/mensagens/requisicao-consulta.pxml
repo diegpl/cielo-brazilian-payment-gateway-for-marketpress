@@ -1,0 +1,5 @@
+<?php echo '<?xml version="1.0" encoding="ISO-8859-1" ?>', "\n"; ?>
+<requisicao-consulta id="<?php echo $this->id; ?>" versao="<?php echo $this->versao; ?>">
+    <tid><?php echo $this->tid; ?></tid>
+<?php echo $this->indent(4, $this->loja), "\n"; ?>
+</requisicao-consulta>

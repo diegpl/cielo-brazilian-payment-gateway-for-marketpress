@@ -1,0 +1,21 @@
+<table class="mp_cart_shipping cielo">
+    <thead>
+        <tr>
+            <th><?php _e('Informações do cartão:', 'mp-cielo'); ?></th>
+            <th align="right"><a href="<?php echo mp_checkout_step_url('checkout'); ?>"><?php _e('Editar', 'mp-cielo'); ?></a></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2"><img src="<?php echo esc_attr($this->gateway->method_img_url, true); ?>" alt="<?php echo esc_attr($this->gateway->public_name, true); ?>"></td>
+        </tr>
+        <tr>
+            <td align="right"><?php _e('Forma de pagamento:', 'mp-cielo'); ?></td>
+            <td><?php echo wp_specialchars($this->parcelas, true); ?></td>
+        </tr>
+        <tr>
+            <td align="right"><?php _e('Número do cartão:', 'mp-cielo'); ?></td>
+            <td><?php echo str_repeat('*', strlen($this->numero)-4); ?><?php echo substr($this->numero, -4, 4); ?></td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,15 @@
+<?php echo '<?xml version="1.0" encoding="ISO-8859-1" ?>', "\n"; ?>
+<requisicao-transacao id="<?php echo $this->id; ?>" versao="<?php echo $this->versao; ?>">
+<?php echo $this->indent(4, $this->loja), "\n"; ?>
+<?php echo $this->indent(4, $this->cartao), "\n"; ?>
+<?php echo $this->indent(4, $this->pedido), "\n"; ?>
+<?php echo $this->indent(4, $this->pagamento), "\n"; ?>
+<?php if ($this->url_retorno): ?>
+    <url-retorno><?php echo $this->url_retorno; ?></url-retorno>
+<?php endif; ?>
+    <autorizar><?php echo $this->autorizar; ?></autorizar>
+    <capturar><?php echo $this->capturar; ?></capturar>
+<?php if ($this->extras): ?>
+    <campo-livre><?php echo $this->extras; ?></campo-livre>
+<?php endif; ?>
+</requisicao-transacao>

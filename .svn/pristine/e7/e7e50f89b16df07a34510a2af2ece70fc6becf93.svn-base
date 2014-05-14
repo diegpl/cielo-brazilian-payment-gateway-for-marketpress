@@ -1,0 +1,5 @@
+<forma-pagamento>
+    <bandeira><?php echo $this->bandeira; ?></bandeira>
+    <produto><?php echo $this->produto; ?></produto>
+    <parcelas><?php echo $this->parcelas; ?></parcelas>
+</forma-pagamento>

@@ -1,0 +1,17 @@
+<script type="text/javascript">
+<?php if ($this->displays == 0): ?>
+    jQuery(document).ready(function(){
+        jQuery.each(mp_cielo_plugins, function(idx, plugin){
+            e = jQuery('[name=mp_choose_gateway][value='+plugin+']');
+            if (e.length == 0 || e[0].type != 'radio') return;
+            jQuery(e[0].parentNode).contents().each(function(){
+                if (this.nodeType == 3) {
+                    jQuery(this).detach();
+                }
+            });
+        });
+    });
+    mp_cielo_plugins = [];
+<?php endif; ?>
+    mp_cielo_plugins.push('<?php echo $this->gateway->plugin_name; ?>');
+</script>

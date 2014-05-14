@@ -1,0 +1,23 @@
+div.mp_checkout_error {
+    background: #ffdddd;
+    -moz-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #ffafaf;
+    margin: 10px 0px;
+    padding: 10px;
+}
+
+table.mp_cart_billing.cielo td,
+table.mp_cart_shipping.cielo td {
+    vertical-align: middle;
+}
+
+table.mp_cart_billing.cielo label.cielo_mes_validade,
+table.mp_cart_billing.cielo select.cielo_mes_validade,
+table.mp_cart_billing.cielo label.cielo_ano_validade,
+table.mp_cart_billing.cielo select.cielo_ano_validade {
+    display: inline;
+    width: 75px;
+}

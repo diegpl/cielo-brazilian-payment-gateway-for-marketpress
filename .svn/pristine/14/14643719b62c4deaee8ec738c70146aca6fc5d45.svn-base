@@ -1,0 +1,9 @@
+<dados-pedido>
+    <numero><?php echo $this->numero; ?></numero>
+    <valor><?php echo $this->valor; ?></valor>
+    <moeda><?php echo $this->moeda; ?></moeda>
+    <data-hora><?php echo $this->datahora; ?></data-hora>
+<?php if ($this->descricao): ?>
+    <descricao><?php echo $this->descricao; ?></descricao>
+<?php endif; ?>
+</dados-pedido>

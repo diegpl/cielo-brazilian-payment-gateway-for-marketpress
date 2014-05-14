@@ -1,0 +1,42 @@
+<div id="mp_<?php echo $this->plugin_name; ?>" class="postbox">
+    <h3 class='handle'><span><?php _e('Configurações de', 'mp-cielo'); ?> <?php _e(lcfirst($this->admin_name)); ?></span></h3>
+    <div class="inside">
+        <table class="form-table">
+            <tr>
+                <th scope="row"><?php _e('Parcelamento', 'mp-cielo') ?></th>
+                <td>
+                    <p>
+                        <label>
+                            <?php _e('Modalidade', 'mp-cielo') ?><br />
+                            <select name="mp[gateways][<?php echo $this->plugin_name; ?>][tipo_parcelamento]">
+                                <?php foreach ($this->tipo_parcelamento as $k => $v): ?>
+                                    <option value="<?php echo $k; ?>"<?php echo ($k == $this->settings['gateways'][$this->plugin_name]['tipo_parcelamento'] ? ' selected' : ''); ?>><?php echo wp_specialchars($v, true); ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <?php _e('Número máximo de parcelas', 'mp-cielo') ?><br />
+                            <select name="mp[gateways][<?php echo $this->plugin_name; ?>][max_parcelas]">
+                                <?php foreach ($this->max_parcelas as $k => $v): ?>
+                                    <option value="<?php echo $k; ?>"<?php echo ($k == $this->settings['gateways'][$this->plugin_name]['max_parcelas'] ? ' selected' : ''); ?>><?php echo wp_specialchars($v, true); ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <?php _e('Valor mínimo de cada parcela', 'mp-cielo') ?><br />
+                            <select name="mp[gateways][<?php echo $this->plugin_name; ?>][valor_min_parcelas]">
+                                <?php foreach ($this->valor_min_parcelas as $k => $v): ?>
+                                    <option value="<?php echo $k; ?>"<?php echo ($k == $this->settings['gateways'][$this->plugin_name]['valor_min_parcelas'] ? ' selected' : ''); ?>><?php echo wp_specialchars($v, true); ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </label>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

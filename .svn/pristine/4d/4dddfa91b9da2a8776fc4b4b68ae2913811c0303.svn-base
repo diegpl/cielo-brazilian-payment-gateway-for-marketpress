@@ -1,0 +1,8 @@
+<dados-portador>
+    <numero><?php echo $this->numero; ?></numero>
+    <validade><?php echo $this->validade; ?></validade>
+    <indicador><?php echo $this->indicador; ?></indicador>
+<?php if ($this->codigo): ?>
+    <codigo-seguranca><?php echo $this->codigo; ?></codigo-seguranca>
+<?php endif; ?>
+</dados-portador>

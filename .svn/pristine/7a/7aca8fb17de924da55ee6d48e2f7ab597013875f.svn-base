@@ -1,0 +1,54 @@
+<table class="mp_cart_billing cielo">
+    <thead>
+        <tr>
+            <th colspan="2"><?php _e('Informações do cartão:', true); ?></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="right"><?php _e('Forma de pagamento:', 'mp-cielo'); ?></td>
+            <td>
+                <?php echo apply_filters('mp_checkout_error_parcelas', ''); ?>
+                <select name="<?php echo $this->gateway->plugin_name; ?>[parcelas]" class="cielo_parcelas">
+                    <?php foreach ($this->parcelamento as $k => $v): ?>
+                        <option value="<?php echo $k; ?>"<?php echo ($k == $this->parcelas ? ' selected' : ''); ?>><?php echo wp_specialchars($v, true); ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right"><?php _e('Número do cartão:', 'mp-cielo'); ?></td>
+            <td>
+                <?php echo apply_filters('mp_checkout_error_numero', ''); ?>
+                <input name="<?php echo $this->gateway->plugin_name; ?>[numero]" type="text" value="<?php echo esc_attr($this->numero); ?>" size="19" maxlength="19" autocomplete="off" class="cielo_numero"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="right"><?php _e('Validade:', 'mp-cielo'); ?></td>
+            <td>
+                <?php echo apply_filters('mp_checkout_error_validade', ''); ?>
+                <label class="inputLabel cielo_mes_validade" for="mes_validade"><?php _e('Mês', 'mp-cielo'); ?></label>
+                <select name="<?php echo $this->gateway->plugin_name; ?>[mes_validade]" class="cielo_mes_validade">
+                    <option value=""></option>
+                    <?php foreach ($this->meses_validade as $k => $v): ?>
+                        <option value="<?php echo $k; ?>"<?php echo ($k == $this->mes_validade ? ' selected' : ''); ?>><?php echo wp_specialchars($v, true); ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <label class="inputLabel cielo_ano_validade" for="ano_validade"><?php _e('Ano', 'mp-cielo'); ?></label>
+                <select name="<?php echo $this->gateway->plugin_name; ?>[ano_validade]" class="cielo_ano_validade">
+                    <option value=""></option>
+                    <?php foreach ($this->anos_validade as $k => $v): ?>
+                        <option value="<?php echo $k; ?>"<?php echo ($k == $this->ano_validade ? ' selected' : ''); ?>><?php echo wp_specialchars($v, true); ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right"><?php _e('Código de segurança:', 'mp-cielo'); ?></td>
+            <td>
+                <?php echo apply_filters('mp_checkout_error_codigo', ''); ?>
+                <input name="<?php echo $this->gateway->plugin_name; ?>[codigo]" type="text" value="<?php echo esc_attr($this->codigo); ?>" size="4" maxlength="4" autocomplete="off" class="cielo_codigo"/>
+            </td>
+        </tr>
+    </tbody>
+</table>

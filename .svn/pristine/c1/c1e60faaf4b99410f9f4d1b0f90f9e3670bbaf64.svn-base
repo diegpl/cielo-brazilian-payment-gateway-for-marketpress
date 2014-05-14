@@ -1,0 +1,53 @@
+<div id="mp_cielo" class="postbox">
+    <h3 class='handle'><span><?php _e('Configurações gerais de pagamentos via Cielo', 'mp-cielo'); ?></span></h3>
+    <div class="inside">
+        <table class="form-table">
+            <tr>
+                <th scope="row"><?php _e('Ambiente', 'mp-cielo') ?></th>
+                <td>
+                    <p>
+                        <select name="mp[gateways][cielo][ambiente]">
+                            <?php foreach ($this->ambientes as $k => $v): ?>
+                                <option value="<?php echo $k; ?>"<?php echo ($k == $this->settings['gateways']['cielo']['ambiente'] ? ' selected' : ''); ?>><?php echo wp_specialchars($v, true); ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"><?php _e('Dados da loja', 'mp-cielo') ?></th>
+                <td>
+                    <span class="description"><?php _e('Estes dados devem ser obtidos junto à Cielo e são necessários apenas no ambiente de produção.', 'mp-cielo'); ?></span>
+                    <p>
+                        <label>
+                            <?php _e('Número de afiliação', 'mp-cielo') ?><br />
+                            <input value="<?php echo esc_attr($this->settings['gateways']['cielo']['ec_numero']); ?>" size="20" maxlength="20" name="mp[gateways][cielo][ec_numero]" type="text" />
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <?php _e('Chave de acesso', 'mp-cielo') ?><br />
+                            <input value="<?php echo esc_attr($this->settings['gateways']['cielo']['ec_chave']); ?>" size="100" maxlength="100" name="mp[gateways][cielo][ec_chave]" type="text" />
+                        </label>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"><?php _e('Moeda', 'mp-cielo') ?></th>
+                <td>
+                    <?php // Cielo eCommerce. Manual do Desenvolvedor Versão 2.5. Página 13. ?>
+                    <span class="description"><?php _e('Caso necessite efetuar transações em dólar, contate a central de relacionamento ou seu gerente comercial.', 'mp-cielo') ?></span>
+                    <p>
+                        <label>
+                            <select name="mp[gateways][cielo][moeda]">
+                                <?php foreach ($this->moedas as $k => $v): ?>
+                                    <option value="<?php echo $k; ?>"<?php echo ($k == $this->settings['gateways']['cielo']['moeda'] ? ' selected' : ''); ?>><?php echo wp_specialchars($v, true); ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </label>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
